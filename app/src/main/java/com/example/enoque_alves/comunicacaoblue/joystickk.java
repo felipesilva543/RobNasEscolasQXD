@@ -26,11 +26,11 @@ public class joystickk extends AppCompatActivity {
     private ArrayList<String> comandosGravados = new ArrayList<String>();
     private ArrayList<String> comandos = new ArrayList<String>();
     private ArrayList<String> comandosTela = new ArrayList<String>();
-    private Button gravar, limpar, play, reset, programar, frenteCosta;
+    private Button gravar, limpar, play, reset, programar, frenteCosta, posicoes;
     private ImageButton more_base, more_garra, less_base, less_garra, more_c, more_d, less_c, less_d;
     private ConexaoBlue connection = ConexaoBlue.getInstance(null, false);
     private EnviaDados enviaDados = EnviaDados.getEnviaDados();
-    private TextView label_garra, label_base, label_c, label_d;
+    private TextView label_garra, label_base, label_c, label_d, setVisao;
     private int delay = 1000;
     private boolean fCosta = true;
     @Override
@@ -62,6 +62,9 @@ public class joystickk extends AppCompatActivity {
 
         //Botão frente costa
         frenteCosta = (Button) findViewById(R.id.frenteCosta);
+        posicoes = (Button) findViewById(R.id.bPosicoes);
+        setVisao = (TextView) findViewById(R.id.tVisao);
+
 
         label_garra.setText("" + (int) (garra_bar.getProgress()/0.57));
         label_base.setText("" + (int) (base_bar.getProgress()/1.8));
@@ -180,10 +183,36 @@ public class joystickk extends AppCompatActivity {
                 fCosta = !fCosta;
                 Log.i("asd", "FrenteCosta = " + fCosta);
                 if(fCosta == true){
-                    frenteCosta.setText("Frente");
+                    setVisao.setText("Visão Frontal");
                 }else{
-                    frenteCosta.setText("Costa");
+                    setVisao.setText("Visão Trazeira");
                 }
+            }
+        });
+
+        //Função para chamar tela das pisiçoes dos servos
+        posicoes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String garraT = (String) label_garra.getText();
+                String baseT = (String) label_base.getText();
+                String alturaT = (String) label_c.getText();
+                String avancoT = (String) label_d.getText();
+
+
+                Intent it = new Intent(joystickk.this, posiServos.class);
+
+                Bundle parametros = new Bundle();
+
+                parametros.putString("teste", "teste");
+                parametros.putString("cGarra", garraT);
+                parametros.putString("cBase", baseT);
+                parametros.putString("cAltura", alturaT);
+                parametros.putString("cAvanco", avancoT);
+
+                it.putExtras(parametros);
+                startActivity(it);
             }
         });
 
