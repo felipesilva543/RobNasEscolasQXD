@@ -20,7 +20,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TelaDeProgramacao extends AppCompatActivity {
+public class TelaDeProgramacao extends AppCompatActivity implements dialogDelay.dialogDelayListener{
     private Button abreFecha, sobeDesce, girar, avancaRecua, salvar, apagar, testar, limpar, setDelay;
     private ListView listaComandos;
     private EditText valor;
@@ -73,6 +73,13 @@ public class TelaDeProgramacao extends AppCompatActivity {
                     comandosTela.remove(comandosTela.size()-1);
                 }
                 listaComandos.setAdapter(adapter);
+            }
+        });
+
+        setDelay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDialog();
             }
         });
 
@@ -215,4 +222,14 @@ public class TelaDeProgramacao extends AppCompatActivity {
 
     }
 
+    public void openDialog(){
+        dialogDelay dD = new dialogDelay();
+        dD.show(getSupportFragmentManager(), "Dialog Delay");
+    }
+
+    @Override
+    public void applyTexts(String delay) {
+        delayValor = Integer.parseInt(delay);
+        delayTexto.setText("Atraso: " + delayValor + "ms");
+    }
 }
