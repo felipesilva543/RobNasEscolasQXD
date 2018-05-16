@@ -67,6 +67,7 @@ public class EnviaDados {
     public void enviarVariosComandos(ArrayList<String> comandos, int delay){
         try {
             for (int i = 0; i < comandos.size(); i++){
+                TimeUnit.MILLISECONDS.sleep(delay);
                 enviarComando(comandos.get(i));
                 char chars [] = comandos.get(i).toCharArray();
                 char servo = chars[1];
@@ -87,7 +88,6 @@ public class EnviaDados {
                 else if (servo == 'd'){
                     posicaoD = (posicaoAtual-60);
                 }
-                TimeUnit.MILLISECONDS.sleep(delay);
             }
         } catch (InterruptedException e) {
             e.printStackTrace();

@@ -12,7 +12,7 @@
 
     <Button
         android:id="@+id/telaDeProgramacao_abreFecha"
-        android:layout_width="133dp"
+        android:layout_width="140dp"
         android:layout_height="48dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
@@ -28,12 +28,12 @@
 
     <Button
         android:id="@+id/telaDeProgramacao_girar"
-        android:layout_width="133dp"
+        android:layout_width="140dp"
         android:layout_height="48dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="8dp"
         android:text="Girar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.517"
@@ -44,12 +44,12 @@
 
     <Button
         android:id="@+id/telaDeProgramacao_avancaRecua"
-        android:layout_width="133dp"
+        android:layout_width="140dp"
         android:layout_height="48dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="11dp"
+        android:layout_marginTop="8dp"
         android:text="Avança/Recua"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.517"
@@ -60,7 +60,7 @@
 
     <Button
         android:id="@+id/telaDeProgramacao_sobeDesce"
-        android:layout_width="133dp"
+        android:layout_width="140dp"
         android:layout_height="48dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
@@ -78,25 +78,23 @@
         android:id="@+id/telaDeProgramacao_ValorEnviado"
         android:layout_width="133dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginRight="37dp"
-        android:layout_marginTop="27dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
         android:hint="Valor (1 a 100)"
         android:inputType="numberDecimal"
         android:selectAllOnFocus="false"
         android:singleLine="false"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/telaDeProgramacao_abreFecha"
-        app:layout_constraintHorizontal_bias="0.584"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/telaDeProgramacao_delay"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.23" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/telaDeProgramacao_apagar"
-        android:layout_width="170dp"
+        android:layout_width="168dp"
         android:layout_height="46dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
@@ -105,7 +103,7 @@
         android:layout_marginTop="25dp"
         android:text="Apagar"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintLeft_toRightOf="@+id/telaDeProgramacao_salvar"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="@+id/linearLayout"
@@ -113,54 +111,36 @@
 
     <Button
         android:id="@+id/telaDeProgramacao_testar"
-        android:layout_width="170dp"
+        android:layout_width="168dp"
         android:layout_height="46dp"
+        android:layout_marginBottom="52dp"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:text="Testar"
-        app:layout_constraintEnd_toEndOf="@+id/telaDeProgramacao_apagar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/bLimpar"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toRightOf="@+id/telaDeProgramacao_salvar"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/telaDeProgramacao_apagar"
-        app:layout_constraintTop_toBottomOf="@+id/telaDeProgramacao_apagar" />
-
-    <EditText
-        android:id="@+id/telaDeProgramacao_delay"
-        android:layout_width="133dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="11dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:hint="Delay"
-        android:inputType="numberDecimal"
-        android:selectAllOnFocus="false"
-        android:singleLine="false"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toRightOf="@+id/telaDeProgramacao_button_more"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.595" />
+        app:layout_constraintStart_toStartOf="@+id/bLimpar"
+        app:layout_constraintTop_toBottomOf="@+id/bLimpar" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tDelay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Delay"
-        app:layout_constraintBottom_toTopOf="@+id/telaDeProgramacao_delay"
-        app:layout_constraintHorizontal_bias="0.687"
-        app:layout_constraintLeft_toRightOf="@+id/telaDeProgramacao_ValorEnviado"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        android:text="Atraso: 1000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/telaDeProgramacao_apagar"
+        app:layout_constraintEnd_toEndOf="@+id/bDelay"
+        app:layout_constraintStart_toStartOf="@+id/bDelay"
+        app:layout_constraintTop_toTopOf="@+id/telaDeProgramacao_apagar" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -168,7 +148,7 @@
         android:layout_height="239dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="109dp"
+        android:layout_marginTop="90dp"
         android:orientation="horizontal"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toRightOf="@+id/telaDeProgramacao_ValorEnviado"
@@ -178,7 +158,9 @@
         <ListView
             android:id="@+id/telaDeProgramacao_lista_de_comandos"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp" />
     </LinearLayout>
 
     <ImageButton
@@ -203,17 +185,45 @@
 
     <Button
         android:id="@+id/telaDeProgramacao_salvar"
-        android:layout_width="133dp"
-        android:layout_height="48dp"
+        android:layout_width="140dp"
+        android:layout_height="46dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:text="Salvar"
         app:layout_constraintBottom_toBottomOf="@+id/telaDeProgramacao_testar"
+        app:layout_constraintEnd_toEndOf="@+id/bDelay"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/bDelay"
+        app:layout_constraintTop_toTopOf="@+id/telaDeProgramacao_testar"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/bLimpar"
+        android:layout_width="168dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="11dp"
+        android:text="Limpar"
+        app:layout_constraintEnd_toEndOf="@+id/telaDeProgramacao_apagar"
+        app:layout_constraintStart_toStartOf="@+id/telaDeProgramacao_apagar"
+        app:layout_constraintTop_toBottomOf="@+id/telaDeProgramacao_apagar" />
+
+    <Button
+        android:id="@+id/bDelay"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Mudar atraso"
+        app:layout_constraintBottom_toBottomOf="@+id/bLimpar"
         app:layout_constraintEnd_toEndOf="@+id/telaDeProgramacao_sobeDesce"
         app:layout_constraintStart_toStartOf="@+id/telaDeProgramacao_sobeDesce"
-        app:layout_constraintTop_toTopOf="@+id/telaDeProgramacao_apagar"
-        app:layout_constraintVertical_bias="0.518" />
+        app:layout_constraintTop_toTopOf="@+id/bLimpar"
+        app:layout_constraintVertical_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>

@@ -14,22 +14,24 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class TelaDeProgramacao extends AppCompatActivity {
-    private Button abreFecha, sobeDesce, girar, avancaRecua, salvar, apagar, testar;
+    private Button abreFecha, sobeDesce, girar, avancaRecua, salvar, apagar, testar, limpar, setDelay;
     private ListView listaComandos;
-    private EditText valor, delay;
+    private EditText valor;
     private ArrayList<String> comandos = new ArrayList<String>();
     private ArrayList<String> comandosTela = new ArrayList<String>();
     private ArrayAdapter<String> adapter;
     private int valorPassado;
     private EnviaDados enviarDados = EnviaDados.getEnviaDados();
-    private int delayValor = 1000;
+    private int delayValor = 1500;
     private ImageButton button_less, button_more;
+    private TextView delayTexto;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,14 +52,29 @@ public class TelaDeProgramacao extends AppCompatActivity {
         apagar = (Button) findViewById(R.id.telaDeProgramacao_apagar);
         testar = (Button) findViewById(R.id.telaDeProgramacao_testar);
         listaComandos = (ListView) findViewById(R.id.telaDeProgramacao_lista_de_comandos);
-        delay = (EditText) findViewById(R.id.telaDeProgramacao_delay);
         valor = (EditText) findViewById(R.id.telaDeProgramacao_ValorEnviado);
         button_less = (ImageButton) findViewById(R.id.telaDeProgramacao_button_less);
         button_more = (ImageButton) findViewById(R.id.telaDeProgramacao_button_more);
         adapter = new ArrayAdapter<String>(TelaDeProgramacao.this, android.R.layout.simple_list_item_1, comandosTela);
         listaComandos.setAdapter(adapter);
-        delay.setText(""+delayValor);
         valor.setText("100");
+
+        setDelay = (Button) findViewById(R.id.bDelay);
+        limpar = (Button) findViewById(R.id.bLimpar);
+        delayTexto = (TextView) findViewById(R.id.tDelay);
+        delayTexto.setText("Atraso: " + delayValor + "ms");
+
+        limpar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int tamanho = (int) comandosTela.size();
+                comandos.clear();
+                for(int i = 0; i < tamanho; i++){
+                    comandosTela.remove(comandosTela.size()-1);
+                }
+                listaComandos.setAdapter(adapter);
+            }
+        });
 
 
         abreFecha.setOnClickListener(new View.OnClickListener(){
@@ -73,11 +90,6 @@ public class TelaDeProgramacao extends AppCompatActivity {
                     valorPassado = (int) (valorPassado * 0.57)+10;
                     comandos.add("!a" + valorPassado);
                     listaComandos.setAdapter(adapter);
-                    //valor.setText("");
-                    if (delay.getText().length() > 0){
-                        delayValor = Integer.parseInt(delay.getText().toString());
-                        //delay.setText("");
-                    }
                 }
                 else{
                     Log.i("asd", "a + "+ "");
@@ -99,10 +111,7 @@ public class TelaDeProgramacao extends AppCompatActivity {
                     valorPassado = (int) (valorPassado * 1.8)+10;
                     comandos.add("!b" + valorPassado);
                     listaComandos.setAdapter(adapter);
-                    if (delay.getText().length() > 0){
-                        delayValor = Integer.parseInt(delay.getText().toString());
-                        //delay.setText("");
-                    }
+
                 }
             }
         });
@@ -119,10 +128,7 @@ public class TelaDeProgramacao extends AppCompatActivity {
                     valorPassado = (int) (valorPassado * 1.2)+60;
                     comandos.add("!c" + valorPassado);
                     listaComandos.setAdapter(adapter);
-                    if (delay.getText().length() > 0){
-                        delayValor = Integer.parseInt(delay.getText().toString());
-                        //delay.setText("");
-                    }
+
                 }
             }
         });
@@ -139,10 +145,7 @@ public class TelaDeProgramacao extends AppCompatActivity {
                     valorPassado = (int) (valorPassado * 0.7)+60;
                     comandos.add("!d" + valorPassado);
                     listaComandos.setAdapter(adapter);
-                    if (delay.getText().length() > 0){
-                        delayValor = Integer.parseInt(delay.getText().toString());
-                        //delay.setText("");
-                    }
+
                 }
             }
         });
@@ -211,6 +214,5 @@ public class TelaDeProgramacao extends AppCompatActivity {
         });
 
     }
-
 
 }
