@@ -6,6 +6,7 @@ import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -200,10 +201,12 @@ public class joystickk extends AppCompatActivity {
                 String alturaT = (String) label_c.getText();
                 String avancoT = (String) label_d.getText();
 
-                Toast.makeText(joystickk.this, "Garra (Motor 1): " + garraT +
+                Toast toast = Toast.makeText(joystickk.this, "Garra (Motor 1): " + garraT +
                         "\nAltura (Motor 2): " + alturaT +
                         "\nAvanço (Motor 3): " + avancoT +
-                        "\nBase (Motor 4): " + baseT, Toast.LENGTH_LONG).show();
+                        "\nBase (Motor 4): " + baseT, Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
 
 
 //                Intent it = new Intent(joystickk.this, posiServos.class);
