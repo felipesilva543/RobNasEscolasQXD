@@ -24,7 +24,9 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/linearLayout"
         app:layout_constraintTop_toTopOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:background="@drawable/buttonshape"
+        android:textColor="#FFFFFF"/>
 
     <Button
         android:id="@+id/telaDeProgramacao_girar"
@@ -40,7 +42,9 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/linearLayout"
         app:layout_constraintTop_toBottomOf="@+id/telaDeProgramacao_abreFecha"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:background="@drawable/buttonshape"
+        android:textColor="#FFFFFF"/>
 
     <Button
         android:id="@+id/telaDeProgramacao_avancaRecua"
@@ -56,7 +60,9 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/linearLayout"
         app:layout_constraintTop_toBottomOf="@+id/telaDeProgramacao_girar"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:background="@drawable/buttonshape"
+        android:textColor="#FFFFFF"/>
 
     <Button
         android:id="@+id/telaDeProgramacao_sobeDesce"
@@ -72,7 +78,9 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/linearLayout"
         app:layout_constraintTop_toBottomOf="@+id/telaDeProgramacao_avancaRecua"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:background="@drawable/buttonshape"
+        android:textColor="#FFFFFF"/>
 
     <EditText
         android:id="@+id/telaDeProgramacao_ValorEnviado"
@@ -107,7 +115,9 @@
         app:layout_constraintLeft_toRightOf="@+id/telaDeProgramacao_salvar"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="@+id/linearLayout"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        android:background="@drawable/buttonshape"
+        android:textColor="#FFFFFF"/>
 
     <Button
         android:id="@+id/telaDeProgramacao_testar"
@@ -122,7 +132,9 @@
         app:layout_constraintEnd_toEndOf="@+id/bLimpar"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/bLimpar"
-        app:layout_constraintTop_toBottomOf="@+id/bLimpar" />
+        app:layout_constraintTop_toBottomOf="@+id/bLimpar"
+        android:background="@drawable/buttonshape"
+        android:textColor="#FFFFFF"/>
 
     <TextView
         android:id="@+id/tDelay"
@@ -196,7 +208,9 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/bDelay"
         app:layout_constraintTop_toTopOf="@+id/telaDeProgramacao_testar"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:background="@drawable/buttonshape"
+        android:textColor="#FFFFFF"/>
 
     <Button
         android:id="@+id/bLimpar"
@@ -210,7 +224,9 @@
         android:text="Limpar"
         app:layout_constraintEnd_toEndOf="@+id/telaDeProgramacao_apagar"
         app:layout_constraintStart_toStartOf="@+id/telaDeProgramacao_apagar"
-        app:layout_constraintTop_toBottomOf="@+id/telaDeProgramacao_apagar" />
+        app:layout_constraintTop_toBottomOf="@+id/telaDeProgramacao_apagar"
+        android:background="@drawable/buttonshape"
+        android:textColor="#FFFFFF"/>
 
     <Button
         android:id="@+id/bDelay"
@@ -224,6 +240,8 @@
         app:layout_constraintEnd_toEndOf="@+id/telaDeProgramacao_sobeDesce"
         app:layout_constraintStart_toStartOf="@+id/telaDeProgramacao_sobeDesce"
         app:layout_constraintTop_toTopOf="@+id/bLimpar"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:background="@drawable/buttonshape"
+        android:textColor="#FFFFFF"/>
 
 </android.support.constraint.ConstraintLayout>
