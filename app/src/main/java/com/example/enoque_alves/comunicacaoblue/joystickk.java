@@ -200,19 +200,24 @@ public class joystickk extends AppCompatActivity {
                 String alturaT = (String) label_c.getText();
                 String avancoT = (String) label_d.getText();
 
+                Toast.makeText(joystickk.this, "Garra (Motor 1): " + garraT +
+                        "\nAltura (Motor 2): " + alturaT +
+                        "\nAvanço (Motor 3): " + avancoT +
+                        "\nBase (Motor 4): " + baseT, Toast.LENGTH_LONG).show();
 
-                Intent it = new Intent(joystickk.this, posiServos.class);
 
-                Bundle parametros = new Bundle();
-
-                parametros.putString("teste", "teste");
-                parametros.putString("cGarra", garraT);
-                parametros.putString("cBase", baseT);
-                parametros.putString("cAltura", alturaT);
-                parametros.putString("cAvanco", avancoT);
-
-                it.putExtras(parametros);
-                startActivity(it);
+//                Intent it = new Intent(joystickk.this, posiServos.class);
+//
+//                Bundle parametros = new Bundle();
+//
+//                parametros.putString("teste", "teste");
+//                parametros.putString("cGarra", garraT);
+//                parametros.putString("cBase", baseT);
+//                parametros.putString("cAltura", alturaT);
+//                parametros.putString("cAvanco", avancoT);
+//
+//                it.putExtras(parametros);
+//                startActivity(it);
             }
         });
 
