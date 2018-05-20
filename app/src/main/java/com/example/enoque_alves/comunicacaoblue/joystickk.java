@@ -264,11 +264,7 @@ public class joystickk extends AppCompatActivity {
             public void onClick(View v) {
                 if (gravando) gravando = !gravando;
                 enviaDados.enviarVariosComandos(comandosGravados, delay);
-//                garra_bar.setProgress(enviaDados.getPosicaoA());
-//                base_bar.setProgress(enviaDados.getPosicaoB());
-//                c_bar.setProgress(enviaDados.getPosicaoC());
-//                d_bar.setProgress(enviaDados.getPosicaoD());
-//                Trocar por set
+
             }
         });
 
@@ -314,9 +310,17 @@ public class joystickk extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                base_bar.setProgress(base_bar.getProgress()-1);
-                String comando = "!b" + (base_bar.getProgress()+10);
-                enviarComando(comando);
+                if(fCosta == true) {
+                    base_bar.setProgress(base_bar.getProgress() - 1);
+                    String comando = "!b" + (base_bar.getProgress() + 10);
+                    enviarComando(comando);
+                }else if(fCosta == false){
+                    int aux = 180 - (base_bar.getProgress());
+                    base_bar.setProgress(base_bar.getProgress() - 1);
+                    aux--;
+                    String comando = "!b" + (aux + 10);
+                    enviarComando(comando);
+                }
             }
         });
         less_garra.setOnClickListener(new View.OnClickListener(){
@@ -333,9 +337,17 @@ public class joystickk extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                base_bar.setProgress(base_bar.getProgress()+1);
-                String comando = "!b" + (base_bar.getProgress()+10);
-                enviarComando(comando);
+                if(fCosta == true) {
+                    base_bar.setProgress(base_bar.getProgress() + 1);
+                    String comando = "!b" + (base_bar.getProgress() + 10);
+                    enviarComando(comando);
+                }else if(fCosta == false){
+                    int aux = 180 - (base_bar.getProgress());
+                    base_bar.setProgress(base_bar.getProgress() + 1);
+                    aux++;
+                    String comando = "!b" + (aux + 10);
+                    enviarComando(comando);
+                }
             }
         });
         more_garra.setOnClickListener(new View.OnClickListener(){
