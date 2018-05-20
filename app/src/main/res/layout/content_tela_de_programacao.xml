@@ -84,7 +84,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:hint="Valor (1 a 100)"
-        android:inputType="numberDecimal"
+        android:inputType="number"
         android:selectAllOnFocus="false"
         android:singleLine="false"
         android:textAlignment="center"

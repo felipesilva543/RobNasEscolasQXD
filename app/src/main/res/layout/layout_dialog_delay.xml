@@ -4,9 +4,10 @@
     android:padding="16dp">
 
     <EditText
-        android:hint="Novo Atraso"
         android:id="@+id/edit_delay"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:hint="Novo Atraso"
+        android:inputType="number" />
     
 </RelativeLayout>
