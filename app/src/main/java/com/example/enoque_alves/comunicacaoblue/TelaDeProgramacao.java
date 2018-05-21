@@ -37,8 +37,6 @@ public class TelaDeProgramacao extends AppCompatActivity implements dialogDelay.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_de_programacao);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_USER_PORTRAIT);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
         Intent it = getIntent();
         comandos = it.getStringArrayListExtra("comandos");
