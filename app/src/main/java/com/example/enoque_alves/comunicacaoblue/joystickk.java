@@ -3,12 +3,14 @@ package com.example.enoque_alves.comunicacaoblue;
 import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -27,13 +29,15 @@ public class joystickk extends AppCompatActivity {
     private ArrayList<String> comandosGravados = new ArrayList<String>();
     private ArrayList<String> comandos = new ArrayList<String>();
     private ArrayList<String> comandosTela = new ArrayList<String>();
-    private Button gravar, limpar, play, reset, programar, frenteCosta, posicoes;
+    private Button gravar, limpar, play, reset, programar, frenteCosta, posicoes, cronometroPS;
     private ImageButton more_base, more_garra, less_base, less_garra, more_c, more_d, less_c, less_d;
     private ConexaoBlue connection = ConexaoBlue.getInstance(null, false);
     private EnviaDados enviaDados = EnviaDados.getEnviaDados();
     private TextView label_garra, label_base, label_c, label_d, setVisao;
     private int delay = 1000;
     private boolean fCosta = true;
+    private boolean running = true;
+    private Chronometer cronometro;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +70,10 @@ public class joystickk extends AppCompatActivity {
         posicoes = (Button) findViewById(R.id.bPosicoes);
         setVisao = (TextView) findViewById(R.id.tVisao);
 
+        //Cronometro
+        cronometro = findViewById(R.id.cronometro);
+        cronometroPS = (Button) findViewById(R.id.bCronometro);
+
 
         label_garra.setText("" + (int) (garra_bar.getProgress()/0.57));
         label_base.setText("" + (int) (base_bar.getProgress()/1.8));
@@ -74,6 +82,23 @@ public class joystickk extends AppCompatActivity {
 
         //play.setVisibility(View.INVISIBLE);
         mmSocket = connection.getConection();
+
+        cronometroPS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(running){
+                    cronometro.setBase(SystemClock.elapsedRealtime());
+                    cronometro.start();
+                    running = false;
+                    cronometroPS.setText("STOP");
+                }else {
+
+                    cronometro.stop();
+                    cronometroPS.setText("PLAY");
+                    running = true;
+                }
+            }
+        });
 
         garra_bar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
 

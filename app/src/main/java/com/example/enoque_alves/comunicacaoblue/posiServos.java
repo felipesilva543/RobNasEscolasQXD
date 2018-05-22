@@ -1,14 +1,20 @@
 package com.example.enoque_alves.comunicacaoblue;
 
 import android.content.Intent;
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.TextView;
 
 public class posiServos extends AppCompatActivity {
 
     private TextView garra, base, altura, avanco;
+  //  private Button start, stop;
+   // private Chronometer cronometro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +25,10 @@ public class posiServos extends AppCompatActivity {
         altura = (TextView) findViewById(R.id.alturaT);
         avanco = (TextView) findViewById(R.id.avancoT);
         base = (TextView) findViewById(R.id.baseT);
+
+//        start = (Button) findViewById(R.id.bPlay);
+//        stop = (Button) findViewById(R.id.bStop);
+//        cronometro = (Chronometer) findViewById(R.id.cronometro);
 
         Intent dadosRecebidos = getIntent();
 
@@ -41,3 +51,4 @@ public class posiServos extends AppCompatActivity {
         }
     }
 }
+
